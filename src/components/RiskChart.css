@@ -1,0 +1,60 @@
+.risk-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.risk-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.risk-label {
+  display: flex;
+  flex-direction: column;
+  min-width: 80px;
+}
+
+.risk-label span {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.risk-label strong {
+  font-size: 18px;
+  color: #333;
+  margin-top: 4px;
+}
+
+.risk-bar-background {
+  flex: 1;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.risk-bar {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.risk-bar.critical {
+  background-color: #d32f2f;
+}
+
+.risk-bar.high {
+  background-color: #f57c00;
+}
+
+.risk-bar.medium {
+  background-color: #fbc02d;
+}
+
+.risk-bar.low {
+  background-color: #388e3c;
+}

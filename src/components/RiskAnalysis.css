@@ -1,0 +1,430 @@
+.risk-analysis-page {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  color: #1a237e;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.page-header p {
+  color: #666;
+  margin: 0;
+  font-size: 14px;
+}
+
+.analysis-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 30px;
+}
+
+.device-selector {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 30px;
+}
+
+.device-selector h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  color: #1a237e;
+  font-weight: 600;
+}
+
+.device-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.device-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.device-option:hover {
+  border-color: #2196f3;
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.2);
+}
+
+.device-option.active {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.device-option .device-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  flex: 1;
+}
+
+.device-option .device-score {
+  margin-left: 10px;
+}
+
+.score-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+}
+
+.score-badge.severity-critical {
+  background: #d32f2f;
+}
+
+.score-badge.severity-high {
+  background: #f57c00;
+}
+
+.score-badge.severity-medium {
+  background: #fbc02d;
+  color: #333;
+}
+
+.score-badge.severity-low {
+  background: #388e3c;
+}
+
+.analysis-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.analysis-section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-section h2 {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  color: #1a237e;
+  font-weight: 600;
+}
+
+/* Risk Overview */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.overview-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  text-align: center;
+  gap: 10px;
+}
+
+.overview-card .label {
+  font-size: 12px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.large-score {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a237e;
+}
+
+.large-score.severity-critical {
+  color: #d32f2f;
+}
+
+.large-score.severity-high {
+  color: #f57c00;
+}
+
+.large-score.severity-medium {
+  color: #fbc02d;
+}
+
+.large-score.severity-low {
+  color: #388e3c;
+}
+
+.overview-card .severity {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+}
+
+.device-info p {
+  margin: 4px 0;
+  font-size: 13px;
+  color: #333;
+}
+
+.device-info p strong {
+  font-weight: 600;
+  display: block;
+}
+
+.device-info .model {
+  color: #999;
+  font-size: 12px;
+}
+
+.maintenance-info p {
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+.last-failure {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.maintenance-due {
+  color: #f57c00;
+  font-weight: 600;
+}
+
+/* SHAP Factors */
+.shap-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.shap-factor {
+  display: grid;
+  grid-template-columns: 200px 1fr 80px;
+  gap: 15px;
+  align-items: center;
+  padding: 15px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border-left: 4px solid #2196f3;
+}
+
+.factor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.factor-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.impact-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.impact-badge.impact-high {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.impact-badge.impact-medium {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.impact-badge.impact-low {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.factor-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.factor-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2196f3 0%, #1976d2 100%);
+  transition: width 0.3s ease;
+}
+
+.factor-value {
+  text-align: right;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2196f3;
+  min-width: 80px;
+}
+
+/* Recommendations */
+.recommendations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recommendation-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #f9fafb;
+  border-left: 4px solid #f57c00;
+  border-radius: 6px;
+  gap: 12px;
+}
+
+.recommendation-text {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Recall Events Table */
+.recall-table {
+  overflow-x: auto;
+}
+
+.recall-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.recall-table thead {
+  background: #f5f7fa;
+}
+
+.recall-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #1a237e;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.recall-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+}
+
+.recall-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.recall-severity {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.recall-severity.critical {
+  background: #ffebee;
+  color: #d32f2f;
+}
+
+.recall-severity.high {
+  background: #ffe0b2;
+  color: #e65100;
+}
+
+.recall-status {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.recall-status.resolved {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .analysis-container {
+    grid-template-columns: 1fr;
+  }
+
+  .device-selector {
+    position: static;
+  }
+
+  .device-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shap-factor {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .risk-analysis-page {
+    padding: 20px;
+  }
+
+  .analysis-section {
+    padding: 20px;
+  }
+
+  .device-list {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-card {
+    padding: 15px;
+  }
+
+  .large-score {
+    font-size: 36px;
+  }
+}
